@@ -44,7 +44,7 @@ The resulting queue meant the average onboarding time (Lead Time) had slipped fr
 
 In financial terms, the extra 40 days meant $68M in annual revenue foregone (40 days x $300 per client per day x 5,7000 new clients each year).
 
-Knowing these numbers we have two ways to calculate the benefits of AI Onboarding.
+Knowing these numbers we have three ways to calculate the benefits of AI Onboarding.
 
 ### **Revenue Uplift**
 If the AI can increase the team's Completion rate by rought 10%, then the queue will vanish. All else equal, the lead time will revert back to 20 days and earn the company $68M revenue per year.
@@ -59,19 +59,11 @@ We actually have all the numbers to show we need 8 FTE to remove the queue:
 
 IF AI can remove the completions gap, then we save 8 FTE's worth of salary. In fact, any additional Completions from the AI can be translated into FTE by dividing the Completions increase by Completions per FTE. If a Completions gap existed, the AI is allowing you to avoid a cost you otherwise had to incur. 
 
-ASIDE: Many finance teams will treat the removal of a Completions gap as "avoided cost," which they usually treat as a "non-financial benefit." If this is for an intangible or discretionary process, that's fair because the org was not actually going to fix the Completions gap. That doesn't apply to processes where completion is mandatory like Invoice Processing or Customer Onboarding or Regulatory Project Delivery. In those cases, avoided cost is real.
+NOTE: Many finance teams will treat the "avoided cost" from removing a gap as a "non-financial benefit." If this is for an intangible or discretionary process, that's fair because the org was required fix the Completions gap. For example, the marketing team can come up with a queue of campaigns but that doesn't mean the org needs to execute them all. In contrast, for a process like Invoice Processing or Customer Onboarding, the company's Completions must keep pace with Demand. In those cases avoided cost is real even if it doesn' result in a cost reduction on the P&L. At a minimum, finance should give these situations the same "credit" for productivity improvements as they would to direct cost out.
 
-### **Direct Cost Out**
-Now, once the AI has covered the Completions gap, any additional increase in Completions can be translated into the number of FTE you can remove. For example, if the AI shows it can handle 140 Completions per month, we know that's equivalent to 20 FTE (140 Completions ÷ 7 Completions per FTE).
+### **Direct Cost Reduction**
+When there is no longer a Completions gap, any additional increase in Completions can be translated directly into the number of FTE you can remove. For example, if the AI shows it can handle 140 Completions per month, we know that's equivalent to 20 FTE (140 Completions ÷ 7 Completions per FTE).
 
-
-The cause was a $1.8M cost saving taken elsewhere in the same function. Nobody had connected the headcount decision to the onboarding queue, because nobody was counting.
-
-The fix was arithmetic too. The gap between Demand and Completions was about 53 items a month. At the team's measured rate of 7 completions per person per month, that is 8 people, at a cost of about $1.7M. $68M for $1.7M is a 38x return.
-
-The 53 completions a month is also the target any AI deployed here would be measured against. If an AI closes that gap, its value can be stated two ways from the same counts: as 8 FTE-equivalents of capacity (about $1.7M, bankable the month it lands) and as 40 days of Lead Time (about $68M a year, visible once the queue clears). If it doesn't move Completions, it earned nothing, whatever it cost.
-
-That last point is the whole method. Once you have the counts, "did the AI work" stops being a survey question and becomes a comparison of two numbers.
 
 *(Chart placeholder: the six-panel page for this case — demand, completions, open items, lead time, completions per FTE, cost per completion.)*
 
