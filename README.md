@@ -1,49 +1,69 @@
 # AI_ROI — the Enthoosa approach
 
-**tl;dr:** the ROI of AI is found by counting. Count the items going into a process and the items coming out (support calls, board papers, onboarded clients), before and after AI, and convert the change in those counts into either a) FTE you no longer need or b) lead time you no longer wait, which is revenue you earn earlier. Everything in this repo is a way of doing that counting well. If you use the material, please call it the "Enthoosa approach" and link here (Thoosa was the Greek goddess of swift currents).
-
-The README is built to be skimmed. Each section stands alone.
+**tl;dr:** To measure the ROI of AI, a company must simply start counting deliverables (whether that's support calls, pen tests, or IT projects). You simply take a pre and post-AI count of deliverables coming into and out of a process. This lets you translate any post-AI change into either a) FTE cost you no longer need or b) Lead Time you no longer wear (which can be revenue you wouldn't have earned). Everything in this repo will help you do the correct counting and measure the right ROI. If you use the material, please call it the "Enthoosa approach" and link here (NOTE: Thoosa was the Greek goddess of swift currents).
 
 ## Try it in ten minutes
 
-Pick one process where AI has been deployed, or is about to be: claims processing, support handling, pen testing, vendor contracting, or project delivery are all good examples. Any process you know well at your level in the org is fine.
+Pick one process where AI has been or will be deployed. Any process you know well, at your level in the org, will work. Great examples include claims processing, support handling, pen testing, vendor contracting, or project delivery.
 
-Get four numbers from the month before the AI went in, and again for the month after. If it hasn't gone in yet, the "before" is your baseline and you come back for the "after."
+Get four numbers from the month prior to and after the AI went in. If you haven't deployed the AI then these "before" numbers are your baseline and you come back for the "after."
 
 The four starting numbers you need:
-1. **Demand**: items that arrived in the month.
-2. **Completions**: items finished in the month.
-3. **Open Items**: items open at month end.
-4. **FTE**: people working the process.
+1. **Demand**: # of items that arrived in the previous month
+2. **Completions**: # of items finished in the previous month
+3. **Open Items**: # of items currently open
+4. **FTE**: # of FTE delivering this process
 
-Note that you don't need these in an Excel or as output from a data pipeline. Just get the 4 numbers.
+Two sidenotes on numbers:
+- You don't need these in an Excel or as output from a data pipeline. Just get the 4 numbers from someone who knows them.
+- If you have more data available, you can average 1 and 2 across several months but 3 should be the current number open.
 
-The two numbers you derive:
+Next, you derive two additional numbers:
 1. **Lead Time**: the time it takes for a work item to transit across your org (Open Items ÷ Completions)
 2. **Completions per FTE**: the amount of items per month a given FTE can deliver (Completions ÷ FTE)
 
-Now compare before and after. There are three possible outcomes.
-
+Now compare changes in these numbers before and after AI. There are three possible outcomes:
 - **Completions per FTE rose, but Completions already matched Demand.** Here the ROI comes from a reduction in direct cost. You can calculate this by taking the incremental increase in Completions ÷ Completions per FTE. This tells you how many FTE's worth of capacity AI is now delivering and, by extension, how many FTE you can release.
-- **Completions per FTE rose, and Completions started below Demand.** The AI is clearing a queue at a constraint. Once the queue is down, you might be able to get some direct cost same as above. Often, however, more value unlocks from the resulting reduction in Lead Time. Specifically, each day of Lead Time removed is worth items per year × value per item per day (example below). Even for processes that don't touch revenue directly, you can calculate a value per day from parent processes and then price your process' Lead Time contribution.
+- **Completions per FTE rose, and Completions started below Demand.** The AI is clearing a queue at a constraint. This would show up as a large number of Open Items. Once the queue is down, you might be able to get some direct cost same as above. Often, however, more value unlocks from the resulting reduction in Lead Time. Specifically, each day of Lead Time removed is worth items per year × value per item per day (example below). Even for processes that don't touch revenue directly, you can calculate a value per day from parent processes and then price your process' Lead Time contribution.
 - **Completions per FTE did not change.** While individuals might have felt they were more productive, that extra output isn't translating to value. There is no ROI here, whatever the usage dashboard or the employee survey says. Most often this means an AI was placed at a step that wasn't the constraint, so the step behind it still limits output.
 
-The reason companies fail to find an ROI of AI varies by each of the above outcomes:
+The reason companies fail to find an ROI of AI is due to a different "gotcha" for each of the possible outcomes above; namely:
 - **Shadow Productivity**: In the first outcome, you can only count benefits if you harvest the cost. Many companies try to claim they got an "equivalent FTE's" worth but this is not operationally true unless that output yields more of a sellable product. But, because Demand was already being satisifed, that's not possible.
--**Missing Value**: In the second outcome, there are real, tangible benefits that your Finance team will not know how to measure. Namely, the team gets additional revenue from landing value-adding activities sooner. Imagine a bank who offers Payments Services to institutional customers. Fees flow as soon as the bank gets their systems live in the client. Those system integrations take time, however, and each extra day of Lead Time in the integration process is a day of lost revenue across _all new clients in a year_ (example below). Even processes 5 levels deep can place a value on their Lead Time by connecting to parent processes that make money (I call this a "Value Crossword" because of the shape the diagrams take).
+-**Accounting Blindspot**: In the second outcome, there are real, tangible benefits that your Finance team will not know how to measure. Namely, the team gets additional revenue from landing value-adding activities sooner. Imagine a bank who offers Payments Services to institutional customers. Fees flow as soon as the bank gets their systems live in the client. Those system integrations take time, however, and each extra day of Lead Time in the integration process is a day of lost revenue across _all new clients in a year_ (example below). Even processes 5 levels deep can place a value on their Lead Time by connecting to parent processes that make money (I call this a "Value Crossword" because of the shape the diagrams take).
 - **Vanity AI**: The third outcome is a more extreme version of the first. At least in the first outcome the team was producing more output. In _this_ case, however, that's not even happening. Individuals might _feel_ like they are getting more done, and that might be true. However, by definition, none of that activity adds value unless it translates to an increase in output.
+- **Local Costing**: Most ROI gotchas relate to difficulties measuring the _benefits_ from AI. Cost is usually straightforward. That said, some companies do make unrealistic cost assumptions including: a) ignoring token costs at scale; b) not accounting for the high-priced AI talent required to maintain systems; c) failing to account for the functional experts they must retain to update and improve the agents
 
-## One worked case
 
-An investment bank earns an average of $300 per day from clients who use its institutional trading platform. Before a client can start using the platform (and before they start paying), they have to go through weeks-long onboarding process.
+## A real worked example
 
-Unbeknonwst to the bank, that onboarding time had started slipping from 20 days, to 60.
+An investment bank earns an average of $300 per day from clients who use its institutional trading platform. Before a client can start using the platform (and before they start paying), they have to go through an onboarding process.
 
-- Completions had been lagging new deals by up to 25% for about a year.
-- As a result, the number of open onboardings had almost doubled.
-- As a result of that, the average time from deal close to client go-live had grown by about 40 days.
+Unbeknownst to the bank, a $1.8M cost-cut had reduced the monthly Completion rate (362) below the incoming Demand (418). That meant ~56 more customers were coming in each month than the 50-person onboarding team could handle.
 
-Each client earns about $302 per day once live, and the bank onboards about 5,673 clients a year. So every day added to onboarding lead time costs 5,673 × $302 ≈ **$1.7M a year**, and the 40 days that had crept in were costing about **$68M a year**. The bank would have needed roughly 617 extra sales to make that back.
+The resulting queue meant the average onboarding time (Lead Time) had slipped from 20 days to 60 across all 5,700 new clients the bank onboarded each year.
+
+In financial terms, the extra 40 days meant $68M in annual revenue foregone (40 days x $300 per client per day x 5,7000 new clients each year).
+
+Knowing these numbers we have two ways to calculate the benefits of AI Onboarding.
+
+### **Revenue Uplift**
+If the AI can increase the team's Completion rate by rought 10%, then the queue will vanish. All else equal, the lead time will revert back to 20 days and earn the company $68M revenue per year.
+
+### **Cost Offset**
+As is, without AI, the company will have to add back FTE to prevent the queue and the losses from expanding.
+
+We actually have all the numbers to show we need 8 FTE to remove the queue:
+1. The Completions per FTE is 7 (362 Completions ÷ 50 FTE)
+2. The current Demand vs. Completions gap is 56
+3. The FTE needed to fill the gap is 8 FTE (56 Completions ÷ 7 Completions per FTE)
+
+IF AI can remove the completions gap, then we save 8 FTE's worth of salary. In fact, any additional Completions from the AI can be translated into FTE by dividing the Completions increase by Completions per FTE. If a Completions gap existed, the AI is allowing you to avoid a cost you otherwise had to incur. 
+
+ASIDE: Many finance teams will treat the removal of a Completions gap as "avoided cost," which they usually treat as a "non-financial benefit." If this is for an intangible or discretionary process, that's fair because the org was not actually going to fix the Completions gap. That doesn't apply to processes where completion is mandatory like Invoice Processing or Customer Onboarding or Regulatory Project Delivery. In those cases, avoided cost is real.
+
+### **Direct Cost Out**
+Now, once the AI has covered the Completions gap, any additional increase in Completions can be translated into the number of FTE you can remove. For example, if the AI shows it can handle 140 Completions per month, we know that's equivalent to 20 FTE (140 Completions ÷ 7 Completions per FTE).
+
 
 The cause was a $1.8M cost saving taken elsewhere in the same function. Nobody had connected the headcount decision to the onboarding queue, because nobody was counting.
 
